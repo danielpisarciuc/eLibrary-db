@@ -1,1 +1,1 @@
-# dbLibrary
+# dbLibrary - this project has the purpose to simulate faculty users database.
