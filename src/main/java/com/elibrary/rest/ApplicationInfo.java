@@ -13,8 +13,8 @@ import javax.ws.rs.core.Response;
 public class ApplicationInfo {
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
     @Path("/info")
+    @Produces(MediaType.TEXT_PLAIN)
     public Response verifyRESTService() {
         return Response.status(200).entity(LibraryMessage.APPLICATION_INFO.getMessage()).build();
     }

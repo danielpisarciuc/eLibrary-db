@@ -105,12 +105,6 @@
             <artifactId>jersey-test-framework-provider-jetty</artifactId>
             <version>${jersey.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.glassfish.jersey.ext</groupId>
-            <artifactId>jersey-proxy-client</artifactId>
-            <version>${jersey.version}</version>
-        </dependency>
-
 
         <!--JUnit-->
         <dependency>
