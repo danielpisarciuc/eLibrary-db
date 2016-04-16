@@ -1,4 +1,4 @@
-package com.elibrary.service.dao;
+package com.elibrary.service.dao.config;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

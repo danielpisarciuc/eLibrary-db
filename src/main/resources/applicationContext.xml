@@ -38,6 +38,6 @@
 
     <bean id="userCredentials" class="com.elibrary.service.business.UserCredentialsImpl"/>
 
-    <bean id="userDao" class="com.elibrary.service.dao.UserDaoImpl"/>
+    <bean id="userDao" class="com.elibrary.service.dao.impl.UserDaoImpl"/>
 
 </beans>

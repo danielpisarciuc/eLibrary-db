@@ -1,5 +1,7 @@
-package com.elibrary.service.dao;
+package com.elibrary.service.dao.impl;
 
+import com.elibrary.service.dao.config.AbstractDao;
+import com.elibrary.service.dao.UserDao;
 import com.elibrary.service.entity.UserEntity;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
