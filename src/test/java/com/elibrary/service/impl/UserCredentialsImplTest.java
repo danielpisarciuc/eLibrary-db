@@ -1,9 +1,9 @@
-package com.elibrary.service.business;
+package com.elibrary.service.impl;
 
-import com.elibrary.service.dao.UserDao;
+import com.elibrary.dao.UserDao;
 import com.elibrary.service.dto.Credentials;
 import com.elibrary.service.dto.User;
-import com.elibrary.service.entity.UserEntity;
+import com.elibrary.dao.entity.UserEntity;
 import com.elibrary.utils.LibraryException;
 import com.elibrary.utils.LibraryMessage;
 import org.junit.Before;

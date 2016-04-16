@@ -8,7 +8,7 @@
 
         <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>com.elibrary.rest</param-value>
+            <param-value>com.elibrary.controller</param-value>
         </init-param>
 
         <init-param>

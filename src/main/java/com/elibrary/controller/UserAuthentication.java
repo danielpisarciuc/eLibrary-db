@@ -1,4 +1,4 @@
-package com.elibrary.rest;
+package com.elibrary.controller;
 
 
 import com.elibrary.service.UserCredentials;
@@ -6,8 +6,8 @@ import com.elibrary.service.dto.Credentials;
 import com.elibrary.utils.LibraryException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
 
-import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -15,10 +15,10 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/authentication")
+@Controller
 public class UserAuthentication {
 
     @Autowired
-    @Qualifier("userCredentials")
     UserCredentials userCredentials;
 
     @POST

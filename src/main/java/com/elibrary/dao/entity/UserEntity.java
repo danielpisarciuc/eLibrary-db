@@ -1,4 +1,4 @@
-package com.elibrary.service.entity;
+package com.elibrary.dao.entity;
 
 
 import org.hibernate.annotations.Type;

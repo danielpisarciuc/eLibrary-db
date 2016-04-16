@@ -1,7 +1,7 @@
-package com.elibrary.service.business.mappers;
+package com.elibrary.mappers;
 
 import com.elibrary.service.dto.User;
-import com.elibrary.service.entity.UserEntity;
+import com.elibrary.dao.entity.UserEntity;
 import org.junit.Test;
 import org.mockito.Mock;
 

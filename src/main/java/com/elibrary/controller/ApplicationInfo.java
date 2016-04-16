@@ -1,7 +1,8 @@
-package com.elibrary.rest;
+package com.elibrary.controller;
 
 
 import com.elibrary.utils.LibraryMessage;
+import org.springframework.stereotype.Controller;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -10,6 +11,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/app")
+@Controller
 public class ApplicationInfo {
 
     @GET

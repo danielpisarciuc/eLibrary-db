@@ -1,6 +1,6 @@
-package com.elibrary.service.dao;
+package com.elibrary.dao;
 
-import com.elibrary.service.entity.UserEntity;
+import com.elibrary.dao.entity.UserEntity;
 
 public interface UserDao {
 

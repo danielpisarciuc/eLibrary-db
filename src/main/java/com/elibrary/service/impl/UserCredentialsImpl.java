@@ -1,26 +1,26 @@
-package com.elibrary.service.business;
+package com.elibrary.service.impl;
 
+import com.elibrary.dao.UserDao;
+import com.elibrary.dao.entity.UserEntity;
 import com.elibrary.service.UserCredentials;
-import com.elibrary.service.dao.UserDao;
 import com.elibrary.service.dto.Credentials;
 import com.elibrary.service.dto.User;
-import com.elibrary.service.entity.UserEntity;
 import com.elibrary.utils.LibraryException;
 import com.elibrary.utils.LibraryMessage;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import static com.elibrary.service.business.mappers.LibraryMapper.userEntityToDto;
+import static com.elibrary.mappers.LibraryMapper.userEntityToDto;
 
 @Transactional
+@Service("userCredentials")
 public class UserCredentialsImpl implements UserCredentials {
 
     private final Logger LOGGER = Logger.getLogger(UserCredentialsImpl.class);
 
     @Autowired
-    @Qualifier("userDao")
     UserDao userDao;
 
     public User verifyUserCredentials(Credentials credentials) throws LibraryException {
@@ -38,6 +38,7 @@ public class UserCredentialsImpl implements UserCredentials {
         }
 
         UserEntity userEntity = userDao.verifyCredentials(credentials.getRegistration(), credentials.getPassword());
+
         if (userEntity != null) {
             return userEntityToDto(userEntity);
         } else {
