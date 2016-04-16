@@ -23,7 +23,6 @@ public class UserAuthentication {
 
     @POST
     @Path("/credentials")
-    @Consumes("application/json")
     @Produces("application/json")
     public Response authenticateUser(Credentials credentials) {
         try {
