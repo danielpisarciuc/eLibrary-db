@@ -1,4 +1,4 @@
-package com.dblibrary.server.mappers;
+package com.dblibrary.server.mapper;
 
 import com.dblibrary.server.dao.entity.UserEntity;
 import com.dblibrary.common.dto.User;

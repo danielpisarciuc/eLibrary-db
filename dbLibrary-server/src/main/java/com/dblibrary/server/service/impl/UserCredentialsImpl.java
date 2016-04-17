@@ -2,7 +2,7 @@ package com.dblibrary.server.service.impl;
 
 import com.dblibrary.common.dto.Credentials;
 import com.dblibrary.server.dao.entity.UserEntity;
-import com.dblibrary.server.mappers.LibraryMapper;
+import com.dblibrary.server.mapper.LibraryMapper;
 import com.dblibrary.common.dto.User;
 import com.dblibrary.server.dao.UserDao;
 import com.dblibrary.server.service.UserCredentials;
