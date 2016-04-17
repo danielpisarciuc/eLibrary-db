@@ -8,7 +8,7 @@
     <context:component-scan base-package="com.dblibrary.server.dao"/>
     <context:component-scan base-package="com.dblibrary.server.controller"/>
 
-    <context:property-placeholder location="classpath:db-library.properties"/>
+    <context:property-placeholder location="classpath:elibrary-db.properties"/>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
