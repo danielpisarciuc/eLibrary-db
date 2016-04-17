@@ -1,7 +1,7 @@
 package com.dblibrary.server.mappers;
 
 import com.dblibrary.server.dao.entity.UserEntity;
-import com.dblibrary.client.common.dto.User;
+import com.dblibrary.common.dto.User;
 
 /**
  * Map an object dto to an entity and vice versa

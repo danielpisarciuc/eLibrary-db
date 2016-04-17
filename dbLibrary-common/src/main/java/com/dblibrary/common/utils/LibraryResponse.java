@@ -1,4 +1,4 @@
-package com.dblibrary.client.common.utils;
+package com.dblibrary.common.utils;
 
 
 public enum LibraryResponse {

@@ -1,6 +1,6 @@
 package com.dblibrary.server.mappers;
 
-import com.dblibrary.client.common.dto.User;
+import com.dblibrary.common.dto.User;
 import com.dblibrary.server.dao.entity.UserEntity;
 import org.junit.Test;
 import org.mockito.Mock;

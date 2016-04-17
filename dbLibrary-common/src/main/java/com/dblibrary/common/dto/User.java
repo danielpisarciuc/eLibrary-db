@@ -1,4 +1,4 @@
-package com.dblibrary.client.common.dto;
+package com.dblibrary.common.dto;
 
 import java.util.Objects;
 

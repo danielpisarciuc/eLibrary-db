@@ -1,7 +1,7 @@
 package com.dblibrary.server.service.impl;
 
-import com.dblibrary.client.common.dto.Credentials;
-import com.dblibrary.client.common.dto.User;
+import com.dblibrary.common.dto.Credentials;
+import com.dblibrary.common.dto.User;
 import com.dblibrary.server.dao.UserDao;
 import com.dblibrary.server.dao.entity.UserEntity;
 import com.dblibrary.server.utils.LibraryException;

@@ -1,7 +1,7 @@
 package com.dblibrary.client.impl;
 
 import com.dblibrary.client.LibraryDbClient;
-import com.dblibrary.client.common.dto.Credentials;
+import com.dblibrary.common.dto.Credentials;
 import org.glassfish.jersey.client.ClientConfig;
 
 import javax.ws.rs.client.Client;

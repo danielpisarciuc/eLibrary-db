@@ -1,6 +1,8 @@
-package com.dblibrary.client.common.dto;
+package com.dblibrary.common.dto;
 
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class Credentials {
 
     private String registration;

@@ -1,9 +1,9 @@
 package com.dblibrary.server.controller;
 
 
-import com.dblibrary.client.common.dto.Credentials;
-import com.dblibrary.server.utils.LibraryException;
+import com.dblibrary.common.dto.Credentials;
 import com.dblibrary.server.service.UserCredentials;
+import com.dblibrary.server.utils.LibraryException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 

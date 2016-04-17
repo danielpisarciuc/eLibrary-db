@@ -1,7 +1,7 @@
 package com.dblibrary.server.controller;
 
-import com.dblibrary.client.common.dto.Credentials;
-import com.dblibrary.client.common.dto.User;
+import com.dblibrary.common.dto.Credentials;
+import com.dblibrary.common.dto.User;
 import com.dblibrary.server.utils.LibraryException;
 import com.dblibrary.server.utils.LibraryMessage;
 import com.dblibrary.server.service.UserCredentials;

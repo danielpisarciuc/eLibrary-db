@@ -1,7 +1,7 @@
 package com.dblibrary.client;
 
 
-import com.dblibrary.client.common.dto.Credentials;
+import com.dblibrary.common.dto.Credentials;
 
 import javax.ws.rs.core.Response;
 
