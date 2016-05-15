@@ -7,5 +7,5 @@ import javax.ws.rs.core.Response;
 
 public interface LibraryDbClient {
 
-    public Response authenticateUser(Credentials credentials);
+    Response authenticateUser(Credentials credentials);
 }
