@@ -3,14 +3,13 @@ package com.dblibrary.server.controller;
 import com.dblibrary.server.utils.LibraryMessage;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
-import org.junit.Assert;
 import org.junit.Test;
 
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class ApplicationInfoTest extends JerseyTest {
 
@@ -26,6 +25,6 @@ public class ApplicationInfoTest extends JerseyTest {
 
         assertEquals((Response.Status.OK).getStatusCode(), response.getStatus());
         assertEquals(MediaType.TEXT_PLAIN, String.valueOf(response.getMediaType()));
-        Assert.assertEquals(LibraryMessage.APPLICATION_INFO.getMessage(), actual);
+        assertEquals(LibraryMessage.APPLICATION_INFO.getMessage(), actual);
     }
 }
