@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="dbLibrary-server:war">
+    <output-path>$PROJECT_DIR$/dbLibrary-server/target</output-path>
+    <root id="archive" name="dbLibrary-server-1.0.war">
+      <element id="artifact" artifact-name="dbLibrary-server:war exploded" />
+    </root>
+  </artifact>
+</component>
