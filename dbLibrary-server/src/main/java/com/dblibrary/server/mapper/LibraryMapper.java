@@ -8,15 +8,14 @@ import com.dblibrary.common.dto.User;
  */
 public class LibraryMapper {
 
-    public static User userEntityToDto(UserEntity entity) {
-        User dto = new User();
+    public static User userEntityToDto(UserEntity userEntity) {
 
-        dto.setUserId(entity.getUserId());
-        dto.setUserName(entity.getUserName());
-        dto.setUserEmail(entity.getUserEmail());
-        dto.setPhoneNumber(entity.getPhoneNumber());
-        dto.setUserType(entity.getUserType());
-
-        return dto;
+        return User.builder()
+                .id(userEntity.getUserId())
+                .type(userEntity.getType())
+                .name(userEntity.getUserName())
+                .email(userEntity.getEmail())
+                .phoneNumber(userEntity.getPhoneNumber())
+                .build();
     }
 }

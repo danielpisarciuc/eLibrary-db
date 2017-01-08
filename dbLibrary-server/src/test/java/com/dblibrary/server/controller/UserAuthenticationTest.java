@@ -54,12 +54,13 @@ public class UserAuthenticationTest extends JerseyTest {
     @Test
     @Ignore
     public void testAuthenticateUserOk() throws LibraryException {
-        User expected = new User();
-        expected.setUserId(1234L);
-        expected.setUserName("userName");
-        expected.setUserEmail("user@lib.ro");
-        expected.setPhoneNumber(72341511L);
-        expected.setUserType("ADMIN");
+        User expected = User.builder()
+                .id(1234L)
+                .name("userName")
+                .email("user@lib.ro")
+                .phoneNumber(72341511L)
+                .type("ADMIN")
+                .build();
 
         Credentials credentials = mockCredentials();
 
@@ -71,18 +72,17 @@ public class UserAuthenticationTest extends JerseyTest {
 
         User actual = response.readEntity(User.class);
 
-        assertEquals(expected.getUserId(), actual.getUserId());
-        assertEquals(expected.getUserName(), actual.getUserName());
+        assertEquals(expected.getId(), actual.getId());
+        assertEquals(expected.getName(), actual.getName());
         assertEquals(expected.getPhoneNumber(), actual.getPhoneNumber());
-        assertEquals(expected.getUserEmail(), actual.getUserEmail());
-        assertEquals(expected.getUserType(), actual.getUserType());
+        assertEquals(expected.getEmail(), actual.getEmail());
+        assertEquals(expected.getType(), actual.getType());
     }
 
     private Credentials mockCredentials() {
-        Credentials credentials = new Credentials();
-        credentials.setPassword("pass1234");
-        credentials.setRegistration("1234Registration");
-
-        return credentials;
+        return Credentials.builder()
+                .password("pass1234")
+                .registration("1234Registration")
+                .build();
     }
 }

@@ -45,9 +45,10 @@ public class UserCredentialsImplTest {
         expectedException.expect(LibraryException.class);
         expectedException.expectMessage(LibraryMessage.NO_CREDENTIALS.getMessage());
 
-        Credentials credentials = new Credentials();
-        credentials.setPassword("");
-        credentials.setRegistration("");
+        Credentials credentials = Credentials.builder()
+                .password("")
+                .registration("")
+                .build();
 
         studentCredentials.verifyUserCredentials(credentials);
     }
@@ -57,9 +58,10 @@ public class UserCredentialsImplTest {
         expectedException.expect(LibraryException.class);
         expectedException.expectMessage(LibraryMessage.NO_PASSWORD.getMessage());
 
-        Credentials credentials = new Credentials();
-        credentials.setPassword("");
-        credentials.setRegistration("registrationNumber");
+        Credentials credentials = Credentials.builder()
+                .password("")
+                .registration("registrationNumber")
+                .build();
 
         studentCredentials.verifyUserCredentials(credentials);
     }
@@ -69,9 +71,10 @@ public class UserCredentialsImplTest {
         expectedException.expect(LibraryException.class);
         expectedException.expectMessage(LibraryMessage.NO_REGISTRATION_NUMBER.getMessage());
 
-        Credentials credentials = new Credentials();
-        credentials.setPassword("password");
-        credentials.setRegistration("");
+        Credentials credentials = Credentials.builder()
+                .password("password")
+                .registration("")
+                .build();
 
         studentCredentials.verifyUserCredentials(credentials);
     }
@@ -81,11 +84,12 @@ public class UserCredentialsImplTest {
         expectedException.expect(LibraryException.class);
         expectedException.expectMessage(LibraryMessage.INVALID_CREDENTIALS.getMessage());
 
-        Credentials credentials = new Credentials();
-        credentials.setPassword("password");
-        credentials.setRegistration("registrationNumber");
+        Credentials credentials = Credentials.builder()
+                .password("password")
+                .registration("registrationNumber")
+                .build();
 
-        when(studentDAO.verifyCredentials("", credentials.getPassword())).thenReturn(new UserEntity());
+        when(studentDAO.verifyCredentials("", credentials.getPassword())).thenReturn(UserEntity.builder().build());
 
         studentCredentials.verifyUserCredentials(credentials);
 
@@ -94,25 +98,28 @@ public class UserCredentialsImplTest {
 
     @Test
     public void testVerifyStudentValidCredentials() throws Exception {
-        Credentials credentials = new Credentials();
-        credentials.setPassword("password");
-        credentials.setRegistration("registration1234");
+        Credentials credentials = Credentials.builder()
+                .password("password")
+                .registration("registration1234")
+                .build();
 
-        UserEntity entity = new UserEntity();
-        entity.setUserId(12345L);
-        entity.setUserName("name");
-        entity.setUserEmail("user@lib.ro");
-        entity.setPhoneNumber(72146566L);
+        UserEntity entity = UserEntity.builder()
+                .userId(12345L)
+                .userName("name")
+                .email("user@lib.ro")
+                .phoneNumber(72146566L)
+                .type("ADMIN")
+                .build();
 
         when(studentDAO.verifyCredentials(credentials.getRegistration(), credentials.getPassword())).thenReturn(entity);
 
         User actual = studentCredentials.verifyUserCredentials(credentials);
 
-        assertEquals(entity.getUserId(), actual.getUserId());
-        assertEquals(entity.getUserName(), actual.getUserName());
-        assertEquals(entity.getUserEmail(), actual.getUserEmail());
+        assertEquals(entity.getUserId(), actual.getId());
+        assertEquals(entity.getUserName(), actual.getName());
+        assertEquals(entity.getEmail(), actual.getEmail());
         assertEquals(entity.getPhoneNumber(), actual.getPhoneNumber());
-        assertEquals(entity.getUserType(), actual.getUserType());
+        assertEquals(entity.getType(), actual.getType());
 
         verify(studentDAO).verifyCredentials(credentials.getRegistration(), credentials.getPassword());
     }
