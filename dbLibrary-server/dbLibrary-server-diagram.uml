@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="464.0">com.dblibrary.server.controller.UserAuthentication</node>
+    <node x="0.0" y="0.0">com.dblibrary.server.dao.entity.UserEntity</node>
+    <node x="0.0" y="769.0">com.dblibrary.server.controller.ApplicationInfo</node>
+    <node x="286.875" y="464.0">com.dblibrary.server.service.impl.UserCredentialsImpl</node>
+    <node x="352.5" y="362.0">com.dblibrary.server.utils.LibraryException</node>
+    <node x="646.702380952381" y="464.0">com.dblibrary.server.dao.impl.UserDaoImpl</node>
+    <node x="67.25" y="351.0">com.dblibrary.server.service.UserCredentials</node>
+    <node x="291.0" y="561.0">com.dblibrary.server.mapper.LibraryMapper</node>
+    <node x="0.0" y="561.0">com.dblibrary.server.utils.LibraryMessage</node>
+    <node x="494.5" y="351.0">com.dblibrary.server.dao.UserDao</node>
+    <node x="789.5" y="340.0">com.dblibrary.server.dao.impl.AbstractDao</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.dblibrary.server.service.impl.UserCredentialsImpl" target="com.dblibrary.server.service.UserCredentials">
+      <point x="-86.33333333333331" y="-26.0" />
+      <point x="330.0416666666667" y="439.0" />
+      <point x="261.5" y="439.0" />
+      <point x="64.75" y="26.0" />
+    </edge>
+    <edge source="com.dblibrary.server.dao.impl.UserDaoImpl" target="com.dblibrary.server.dao.UserDao">
+      <point x="-68.75" y="-26.0" />
+      <point x="715.452380952381" y="439.0" />
+      <point x="700.75" y="439.0" />
+      <point x="68.75" y="26.0" />
+    </edge>
+    <edge source="com.dblibrary.server.service.impl.UserCredentialsImpl" target="com.dblibrary.server.utils.LibraryException">
+      <point x="0.0" y="-26.0" />
+      <point x="416.375" y="439.0" />
+      <point x="413.5" y="439.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.dblibrary.server.controller.UserAuthentication" target="com.dblibrary.server.service.UserCredentials">
+      <point x="0.0" y="-26.0" />
+      <point x="-64.75" y="26.0" />
+    </edge>
+    <edge source="com.dblibrary.server.dao.impl.UserDaoImpl" target="com.dblibrary.server.dao.impl.AbstractDao">
+      <point x="68.75" y="-26.0" />
+      <point x="852.952380952381" y="439.0" />
+      <point x="878.5" y="439.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="com.dblibrary.server.service.impl.UserCredentialsImpl" target="com.dblibrary.server.dao.UserDao">
+      <point x="86.33333333333331" y="-26.0" />
+      <point x="502.7083333333333" y="439.0" />
+      <point x="563.25" y="439.0" />
+      <point x="-68.75" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.72294887039239" x="484.0" y="410.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+
