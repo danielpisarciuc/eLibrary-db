@@ -9,14 +9,11 @@ import static org.junit.Assert.assertEquals;
 
 public class LibraryMapperTest {
 
-    @Mock
-    private LibraryMapper mapper;
-
     @Test
     public void testUserEntityToDto() throws Exception {
         UserEntity expected = mockUserEntity();
 
-        User actual = mapper.userEntityToDto(expected);
+        User actual = LibraryMapper.userEntityToDto(expected);
 
         assertEquals(expected.getUserId(), actual.getUserId());
         assertEquals(expected.getUserName(), actual.getUserName());

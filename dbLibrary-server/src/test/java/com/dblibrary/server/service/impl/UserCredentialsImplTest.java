@@ -10,13 +10,17 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+@RunWith(MockitoJUnitRunner.class)
 public class UserCredentialsImplTest {
 
     @Rule
@@ -27,11 +31,6 @@ public class UserCredentialsImplTest {
 
     @InjectMocks
     private UserCredentialsImpl studentCredentials;
-
-    @Before
-    public void setUp() {
-        MockitoAnnotations.initMocks(this);
-    }
 
     @Test
     public void testVerifyStudentCredentialsNull() throws LibraryException {
@@ -89,6 +88,8 @@ public class UserCredentialsImplTest {
         when(studentDAO.verifyCredentials("", credentials.getPassword())).thenReturn(new UserEntity());
 
         studentCredentials.verifyUserCredentials(credentials);
+
+        verify(studentDAO).verifyCredentials("", credentials.getPassword());
     }
 
     @Test
@@ -101,7 +102,7 @@ public class UserCredentialsImplTest {
         entity.setUserId(12345L);
         entity.setUserName("name");
         entity.setUserEmail("user@lib.ro");
-        entity.setPhoneNumber(072146566L);
+        entity.setPhoneNumber(72146566L);
 
         when(studentDAO.verifyCredentials(credentials.getRegistration(), credentials.getPassword())).thenReturn(entity);
 
@@ -112,5 +113,7 @@ public class UserCredentialsImplTest {
         assertEquals(entity.getUserEmail(), actual.getUserEmail());
         assertEquals(entity.getPhoneNumber(), actual.getPhoneNumber());
         assertEquals(entity.getUserType(), actual.getUserType());
+
+        verify(studentDAO).verifyCredentials(credentials.getRegistration(), credentials.getPassword());
     }
 }

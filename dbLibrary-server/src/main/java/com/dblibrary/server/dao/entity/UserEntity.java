@@ -1,6 +1,9 @@
 package com.dblibrary.server.dao.entity;
 
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.hibernate.annotations.Type;
 import org.joda.time.LocalDate;
 
@@ -114,42 +117,51 @@ public class UserEntity implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
+
         if (!(o instanceof UserEntity)) return false;
+
         UserEntity that = (UserEntity) o;
-        return Objects.equals(getId(), that.getId()) &&
-                Objects.equals(getUserId(), that.getUserId()) &&
-                Objects.equals(getUserName(), that.getUserName()) &&
-                Objects.equals(getUserEmail(), that.getUserEmail()) &&
-                Objects.equals(getPhoneNumber(), that.getPhoneNumber()) &&
-                Objects.equals(getRegistration(), that.getRegistration()) &&
-                Objects.equals(getUserType(), that.getUserType()) &&
-                Objects.equals(getModifyAt(), that.getModifyAt());
+
+        return new EqualsBuilder()
+                .append(getId(), that.getId())
+                .append(getUserId(), that.getUserId())
+                .append(getUserName(), that.getUserName())
+                .append(getUserEmail(), that.getUserEmail())
+                .append(getPhoneNumber(), that.getPhoneNumber())
+                .append(getRegistration(), that.getRegistration())
+                .append(getPassword(), that.getPassword())
+                .append(getUserType(), that.getUserType())
+                .append(getModifyAt(), that.getModifyAt())
+                .isEquals();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(
-                getId(),
-                getUserId(),
-                getUserName(),
-                getUserEmail(),
-                getPhoneNumber(),
-                getRegistration(),
-                getUserType(),
-                getModifyAt());
+        return new HashCodeBuilder(17, 37)
+                .append(getId())
+                .append(getUserId())
+                .append(getUserName())
+                .append(getUserEmail())
+                .append(getPhoneNumber())
+                .append(getRegistration())
+                .append(getPassword())
+                .append(getUserType())
+                .append(getModifyAt())
+                .toHashCode();
     }
 
     @Override
     public String toString() {
-        return "UserEntity{" +
-                "id=" + id +
-                ", userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", userEmail='" + userEmail + '\'' +
-                ", phoneNumber=" + phoneNumber + '\'' +
-                ", registration='" + registration + '\'' +
-                ", userType='" + userType + '\'' +
-                ", modifyAt=" + modifyAt +
-                '}';
+        return new ToStringBuilder(this)
+                .append("id", id)
+                .append("userId", userId)
+                .append("userName", userName)
+                .append("userEmail", userEmail)
+                .append("phoneNumber", phoneNumber)
+                .append("registration", registration)
+                .append("password", password)
+                .append("userType", userType)
+                .append("modifyAt", modifyAt)
+                .toString();
     }
 }

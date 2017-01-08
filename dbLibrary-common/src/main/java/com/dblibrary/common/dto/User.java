@@ -1,7 +1,12 @@
 package com.dblibrary.common.dto;
 
-import java.util.Objects;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class User {
 
     private Long userId;
@@ -53,28 +58,39 @@ public class User {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
+
         if (!(o instanceof User)) return false;
+
         User user = (User) o;
-        return Objects.equals(getUserId(), user.getUserId()) &&
-                Objects.equals(getUserName(), user.getUserName()) &&
-                Objects.equals(getUserEmail(), user.getUserEmail()) &&
-                Objects.equals(getUserType(), user.getUserType()) &&
-                Objects.equals(getPhoneNumber(), user.getPhoneNumber());
+
+        return new EqualsBuilder()
+                .append(getUserId(), user.getUserId())
+                .append(getUserName(), user.getUserName())
+                .append(getUserEmail(), user.getUserEmail())
+                .append(getUserType(), user.getUserType())
+                .append(getPhoneNumber(), user.getPhoneNumber())
+                .isEquals();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getUserId(), getUserName(), getUserEmail(), getUserType(), getPhoneNumber());
+        return new HashCodeBuilder(17, 37)
+                .append(getUserId())
+                .append(getUserName())
+                .append(getUserEmail())
+                .append(getUserType())
+                .append(getPhoneNumber())
+                .toHashCode();
     }
 
     @Override
     public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", userEmail='" + userEmail + '\'' +
-                ", userType='" + userType + '\'' +
-                ", phoneNumber=" + phoneNumber +
-                '}';
+        return new ToStringBuilder(this)
+                .append("userId", userId)
+                .append("userName", userName)
+                .append("userEmail", userEmail)
+                .append("userType", userType)
+                .append("phoneNumber", phoneNumber)
+                .toString();
     }
 }
