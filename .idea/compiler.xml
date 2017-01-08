@@ -14,7 +14,7 @@
       <entry name="!?*.aj" />
     </wildcardResourcePatterns>
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="false">
+      <profile default="true" name="Default" enabled="true">
         <processorPath useClasspath="true" />
       </profile>
       <profile default="false" name="Annotation profile for untitled" enabled="true">
@@ -50,7 +50,6 @@
       <module name="dbLibrary-common" target="1.8" />
       <module name="dbLibrary-server" target="1.8" />
       <module name="eLibrary-db" target="1.8" />
-      <module name="untitled" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
