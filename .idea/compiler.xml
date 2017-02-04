@@ -28,21 +28,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="dbLibrary-server" />
       </profile>
       <profile default="false" name="Annotation profile for dbLibrary-common" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="dbLibrary-common" />
       </profile>
       <profile default="false" name="Annotation profile for dbLibrary-client" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="dbLibrary-client" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
