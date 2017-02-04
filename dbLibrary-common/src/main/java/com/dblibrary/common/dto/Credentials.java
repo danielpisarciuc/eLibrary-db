@@ -2,11 +2,13 @@ package com.dblibrary.common.dto;
 
 import lombok.*;
 
+import java.io.Serializable;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Credentials {
+public class Credentials implements Serializable {
     @NonNull
     private String registration;
 

@@ -3,13 +3,14 @@ package com.dblibrary.common.dto;
 import lombok.*;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
 @XmlRootElement
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class User implements Serializable {
 
     @NonNull
     private Long id;
