@@ -6,19 +6,16 @@ import com.dblibrary.server.dao.UserDao;
 import com.dblibrary.server.dao.entity.UserEntity;
 import com.dblibrary.server.utils.LibraryException;
 import com.dblibrary.server.utils.LibraryMessage;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserCredentialsImplTest {
@@ -122,5 +119,6 @@ public class UserCredentialsImplTest {
         assertEquals(entity.getType(), actual.getType());
 
         verify(studentDAO).verifyCredentials(credentials.getRegistration(), credentials.getPassword());
+        verifyNoMoreInteractions(studentDAO);
     }
 }

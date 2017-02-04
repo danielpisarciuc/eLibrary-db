@@ -19,12 +19,12 @@ import javax.ws.rs.core.Response;
 public class UserAuthentication {
 
     @Autowired
-    UserCredentials userCredentials;
+    private UserCredentials userCredentials;
 
     @POST
     @Path("/credentials")
-    @Produces("application/json")
-    @Consumes("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response authenticateUser(Credentials credentials) {
         try {
             return Response.ok(userCredentials.verifyUserCredentials(credentials)).build();
