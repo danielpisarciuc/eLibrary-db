@@ -7,9 +7,9 @@
     <version>1.0</version>
 
     <modules>
+        <module>dbLibrary-client</module>
         <module>dbLibrary-common</module>
         <module>dbLibrary-server</module>
-        <module>dbLibrary-client</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -27,6 +27,7 @@
         <junit.version>4.12</junit.version>
         <apache.common.version>3.1</apache.common.version>
         <lombok.version>1.16.12</lombok.version>
+        <tomcat7.maven.plugin>2.2</tomcat7.maven.plugin>
     </properties>
 
     <build>
